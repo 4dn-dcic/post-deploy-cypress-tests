@@ -27,7 +27,7 @@ before_install:
 - node --version
 - npm config set python /usr/bin/python2.7
 install:
-- npm install cypress
+- npm install
 - git clone https://github.com/4dn-dcic/fourfront.git ./fourfront
 - cd ./fourfront
 - git fetch origin selenium

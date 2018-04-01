@@ -1,0 +1,14 @@
+{
+    "name": "fourfront-post-deploy-cypress-tests",
+    "version": "0.0.0",
+    "description": "Tests for 4DN post-deployments.",
+    "scripts": {},
+    "author": "4DN-DCIC",
+    "license": "MIT",
+    "files": [],
+    "repository": "4dn-dcic/post-deploy-cypress-tests",
+    "dependencies": {
+        "cypress": "^2.1.0",
+        "underscore": "^1.8.3"
+    }
+}
