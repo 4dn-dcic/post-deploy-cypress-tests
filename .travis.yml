@@ -13,7 +13,7 @@ addons:
     - bsdtar
     - build-essential
     - make
-  chrome: stable
+  #chrome: stable
 env:
   global:
   - USER="4dn-dcic"
@@ -42,7 +42,7 @@ install:
   fi
 script:
 - travis_wait 20 $(npm bin)/cypress run --record --key $CYPRESS_KEY --project './fourfront/deploy/post_deploy_testing
-  --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret --browser chrome'
+  --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret'
 after_script:
 - echo $BUILD_AGGREGATE_STATUS
 after_success:
