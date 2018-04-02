@@ -9,6 +9,7 @@
     "repository": "4dn-dcic/post-deploy-cypress-tests",
     "dependencies": {
         "cypress": "^2.1.0",
+        "jsonwebtoken": "^8.2.0",
         "underscore": "^1.8.3"
     }
 }
