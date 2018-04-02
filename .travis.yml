@@ -16,7 +16,6 @@ addons:
 env:
   global:
   - USER="4dn-dcic"
-  - FOURFRONT_BRANCH="more_cypress"
   - secure: fJT/nDt68Av0IsbwDk9z/qk36uwv81Y27u81I4MaeAMUsMiQMSXd2NaBmvqD+/utf0toAxi7f0vadHchG2dGfR0ZlbVVMTx9xeG7ahMILHH2m/g9k2yI2HnFl2eBryckfnGwtLuLDxYCY2qwkSP6WCw4Hy3yNVd5zWUMabf7/t92IoMezjbdwn/iwQqzyvU6PESgiWjAjuAHjsQQHWIJoIpsB9PM+R1uRIdIf7dV6tytKd5cCUloHJolniJpJtQM4jsTOBlWWaYlzDbRivIhmxqSwL+mBG8VsBkk9f8AFRdvJ3d6M+Kp67IxQ8Cyy+Efavs3K7Lc0eZD98tWz0Hta++Cm5C5dCKcgSZMF4ift+dEkXei/YUTO3ruBV/Ogd7Nxv6vLoFmL5v+FsVj3+TTnUvjwKcPjF81rRP7tldi+AXipG7M7CVKUdPbTuQY+hMZM/i7RgDsAWCFKwgOvKECYLeGFhE+1YPgKXVcuOkf0y++k/HB0rP8pD/94cyA5dUW85vNXh/c0iSF3m77X2D16RZCi3UaCX5okrInNn/MzPzirRNkVAGsmUgFgJvi97mlAUkzMyWhsx+1+bJlMSmN/+AZ/u613SVHuV19xdFa38zsQ/xfegZQuueoBOFd5amEghjkRTYIbPLJ/IeOvRM0ayekjQAtEdP3Na5Hw2sxj5Q=
   - secure: ES6kTjktJy60LkwMGBhMs5ueoF+v7txcTIE5UmcED9Jg2KjVDgMoEsKYPk6jaUCFrwe3KAdReAyUBN+o0oOAQN03wkoTHiUKcK6dSSgtE8Z3GXERyDHdf4AJHgj7fRl59QBmLBwc0b+21zJofb9t1va31bm8baulcxsbWqkzulWtqyBuFtoa6GAwXcP7XzZE45zoMfQPtH2HvESC67cXxOQFnNSCx040HaK5qqvBYkRIN7Ee8skrN+ZK0gurb3zpZz9DURlQ4O7OoGi5QN1ejXAbSKWj0L8luPT31S8cFlb7yZYYQIlnSwpJP760V0MrQ2ZmbGJ0n5SIUpOdjilyPsNFW3eNFf42g4KcV5stg8GQ5hg7Dv3RuH4cpYM6dS1rrDOk05wE/BF2hlSLf8X8RGGFTLyX8cpWaNvL9KK/qDYqzbzVjCitsC+KEL9xIOSD6bf7R5xPCz55eyVp4YbkP+xtAHFMIUku+D1kfIBajwiSlHioowOVMaJ9J8rT6y4liVNMT8LSZHwB1soNnceIUbO97gfh7vONwYNc+LhIU132ftsqoM1Utj1wp21yEIGUZUAmvglbv5m7IYUB5XEyV6WSHSHAICrDgOG6Lbv1DuT6oeGavqfjFx+LklXPDR55Ye/n7KPsfjUZJxp2uw6WjGuLPJVuNVP0kwKx6koqvTk=
   - secure: f33pvCgWPnoeX6BT6iJbJ8rIucz89Z5UImhqpL8Np1O9QbZduYiZ7wWzX9HfIXlD8Rq4kAHb1Yiwh7RmVJH6AFXiimjBLWP6Rr/XBvuChB3bLfIvurlVppDAa4vZ8jzO9gezZ+9GnWaRq1TcAGnvymtZW78f/DiWhOzeslXUfmkwTshZ+SgHtia8Ml3B7sKSLIFxXQ/ZOYMzvrF7w5FqFmSi5Mp+vKLnXIEa0LuLx+Vh+Q4kXzr2pkWejwMPzCOeXQ1bnddCpME2Qa5D4tW8PkK/iikPRn+WN7+VHAn10Za32wFH3cfCYFIq6wkSgTF6sPAJLy1u2l+Zj/E8F2LLmexHufGCkDskFaYbem6IKfA6ELZfQHgdGiDU4oD9175JNvHPUjzJHt3+EgEgmke+NOjAn31Qb1uD1fHemH2l/kCGKyz48d89biIhw1v7oCuojGgohEqA2tMvsaIpIrMBlez+yQrt2RzWE4Qazpbc15a54I5vGWYcvmO95ybdGj4DJDun4a46QEDmb5YkbSEiiCUwNnTjfZggm1yL3MfdAFBfA3kqaUt0jbv09secRl8ILkkNX1Ld7u1T0n69dBpgHHiGIO7g8aSToe6V3Zr7ZEA8LY4uAReV7ARGn5p4NN7Sl2lWuHZ/G/d328/eS7We4oYx+hw0JHJOjWfGp32N+1o=
@@ -29,8 +28,9 @@ before_install:
 - npm --version
 - npm config set python /usr/bin/python2.7
 install:
+- source config.sh
 - npm install
-- git clone https://github.com/4dn-dcic/fourfront.git ./fourfront
+- git clone $FOURFRONT_REPO ./fourfront
 - |
   if [ $FOURFRONT_BRANCH != "master" ]; then
     cd ./fourfront
@@ -44,7 +44,7 @@ script:
   travis_wait 20 $(npm bin)/cypress run --record --key $CYPRESS_KEY \
   --project ./fourfront/deploy/post_deploy_testing \
   --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret \
-  --config baseUrl=http://fourfront-hotseat.9wzadzju3p.us-east-1.elasticbeanstalk.com/
+  --config baseUrl=$CYPRESS_BASE_URL
 after_script:
 - echo $BUILD_AGGREGATE_STATUS
 after_success:
