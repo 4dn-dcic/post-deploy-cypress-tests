@@ -45,7 +45,7 @@ script:
   travis_wait 20 $(npm bin)/cypress run --record --key $CYPRESS_KEY \
   --project ./fourfront/deploy/post_deploy_testing \
   --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret \
-  --config baseUrl=http://staging.4dnucleome.org
+  --config baseUrl=http://fourfront-hotseat.9wzadzju3p.us-east-1.elasticbeanstalk.com/
 after_script:
 - echo $BUILD_AGGREGATE_STATUS
 after_success:
