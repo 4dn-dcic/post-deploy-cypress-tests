@@ -24,7 +24,7 @@ notifications:
     rooms:
       secure: QumU9uLvDaMUznlXwruxSe9l0rOQqchBAxxYuFaufkrtAbqoPNljJlQYqZaw4PPxeom1rMv/rapYUTEIdzStuJ+LtYH4zjcM8hvSCZJPIK1W1GmnOCOlFBau19dXZcVXlVQxLr4q90/Yj9bJOsG8mFSeSr+i+YgR4QNBZIM3XcfNZTJlZ9uEHHXdC2MhGPwCJQ+9QnBqZ0CfjJSOyq76armHrOgt9sviyUSzV9+GDqUGomMyfsJodK33aB1aaLW2REL3KUXTcBgYbS34k05TMQVv4lZ5Li731IdmzClyT2I/MEsotzg/b4SNM5V+MO9l5mrtscWEdEcIY/n/E365o8c1qtwcWhPKW807+32tOCOakryeXkm8Hjiv0s+Wn12CDWwHQN5vrRHUpR1xndRkZRr/SePgHoGnF5qDvU085ANjr40Pgd+Bsg3bZgM8nAEWENQ6ZlsN8KNM3Xqgw5S/LI2DlF7u3MkBmdVw2lZBAT6096q/Wn9qcAsJilBK9UKRKknvZ5nzwITzBwfR/PDBnV6clX53G3K0YQ1+iM2QjaWibpW8HlVMREO6b1axb2bt0SpAX5b/tZAUYmX17LPhXnyrOGp1nC+rrVAgzxa8uLtzUxg2b6XvdtJYQH4KJpV5V5pZOi+n//nzY5LEMF90a+RHbvVxoMh93yX+2rr3L9M=
     template:
-      - "Test <%{build_url}|#%{build_number}> of *%{branch}* in %{result} in %{duration}"
+      - "*%{branch}* (test <%{build_url}|#%{build_number}>) %{result} in %{duration}."
 before_install:
 - nvm install 8
 - node --version
