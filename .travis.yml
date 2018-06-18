@@ -32,7 +32,7 @@ before_install:
 - npm config set python /usr/bin/python2.7
 install:
 - source config.sh
-- npm install
+- npm install --update
 - git clone $FOURFRONT_REPO ./fourfront
 - |
   if [ $FOURFRONT_BRANCH != "master" ]; then
