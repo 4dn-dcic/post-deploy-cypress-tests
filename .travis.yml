@@ -9,6 +9,8 @@ cache:
   - "~/.npm"
   - node_modules
   - "/home/travis/.cypress/Cypress"
+  - "~/.cache"
+  - "/home/travis/.cache/Cypress"
 addons:
   apt:
     packages:
@@ -33,6 +35,7 @@ before_install:
 install:
 - source config.sh
 - npm install --update
+- $(npm bin)/cypress install
 - git clone $FOURFRONT_REPO ./fourfront
 - |
   if [ $FOURFRONT_BRANCH != "master" ]; then
