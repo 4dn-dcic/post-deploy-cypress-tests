@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_POSTDEPLOY_BRANCH=$(git rev-parse --abbrev-ref HEAD)   # Get current branch
+CURRENT_POSTDEPLOY_BRANCH=$(git branch | grep \* | cut -d ' ' -f2)   # Get current branch
 
 echo "Post deploy testing branch is \"$CURRENT_POSTDEPLOY_BRANCH\""
 
