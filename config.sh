@@ -1,6 +1,13 @@
 #!/bin/bash
 
-CURRENT_POSTDEPLOY_BRANCH=$(git branch | grep \* | cut -d ' ' -f2)   # Get current branch
+# Get current branch
+if [ -z $TRAVIS_BRANCH ]; then
+    # Not on Travis - grab from git command(s)
+    CURRENT_POSTDEPLOY_BRANCH=$(git branch | grep \* | cut -d ' ' -f2);
+else
+    # On Travis - grab from Travis env variable
+    CURRENT_POSTDEPLOY_BRANCH=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo $TRAVIS_BRANCH; else echo $TRAVIS_PULL_REQUEST_BRANCH; fi)
+fi
 
 echo "Post deploy testing branch is \"$CURRENT_POSTDEPLOY_BRANCH\""
 
