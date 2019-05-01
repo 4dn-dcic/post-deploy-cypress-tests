@@ -15,6 +15,7 @@ addons:
     - bsdtar
     - build-essential
     - make
+    - libgconf-2-4
 env:
   global:
   - USER="4dn-dcic"
