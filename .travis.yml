@@ -13,6 +13,7 @@ addons:
     - bsdtar
     - build-essential
     - make
+    - libgconf-2-4
 env:
   global:
   - USER="4dn-dcic"
@@ -28,6 +29,7 @@ notifications:
 before_install:
 - npm --version
 - npm config set python /usr/bin/python2.7
+- 
 install:
 - source config.sh
 - npm install --update
