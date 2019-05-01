@@ -29,7 +29,6 @@ notifications:
 before_install:
 - npm --version
 - npm config set python /usr/bin/python2.7
-- 
 install:
 - source config.sh
 - npm install --update
