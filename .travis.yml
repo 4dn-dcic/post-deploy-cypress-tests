@@ -7,14 +7,9 @@ cache:
   npm: true
   directories:
   - "~/.cache"
-services:
-- xvfb
 addons:
   apt:
     packages:
-    - bsdtar
-    - build-essential
-    - make
     - libgconf-2-4
 env:
   global:
