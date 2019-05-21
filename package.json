@@ -8,8 +8,9 @@
     "files": [],
     "repository": "4dn-dcic/post-deploy-cypress-tests",
     "dependencies": {
-        "cypress": "^3.2.0",
+        "cypress": "^3.3.0",
         "jsonwebtoken": "^8.2.0",
         "underscore": "^1.8.3"
     }
 }
+
