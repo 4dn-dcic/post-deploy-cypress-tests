@@ -41,7 +41,7 @@ install:
   fi
 script:
 - |
-  travis_wait 40 $(npm bin)/cypress run --record --key $CYPRESS_KEY \
+  travis_wait 59 $(npm bin)/cypress run --record --key $CYPRESS_KEY \
   --project ./fourfront/deploy/post_deploy_testing \
   --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret \
   --config baseUrl=$CYPRESS_BASE_URL
