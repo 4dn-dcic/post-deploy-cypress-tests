@@ -2,7 +2,7 @@ language: node_js
 sudo: true
 if: tag IS blank
 node_js:
-  - 10
+  - 12
 cache:
   npm: true
   directories:
