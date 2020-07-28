@@ -19,9 +19,11 @@ env:
   - secure: mZQLxyG2fnqkXfYf1T7gX918jpWA9g+8cW20lFXiLYhMwUuqhiAV0N8698o+LLSkjmIpjn1aVQqZEDPkGdf1qlzvH0eipmygLESuySRlsUqEg3wlOVnuQJIGqcDCtdK9jWBuCMgVBAdq/eGJ7sXkt941IHMZMSfkEbMEEx/YCn1EoGqxuk3Y5OFsabz4FersUZ8RFVPwODgSX3dRNZkWo8uwx8bsbhBT9RMoTx4GVn+QXYCl8P+fXXfV1Mtj+284pt1jXyqxdxMdnIZGw2ct5SY9WUmO9Yr9nlyM5n9qoBtulK4QKX/3TL7F5UO/s3TWE6Wswe8cc/+oOgFwVHUNe9etEbCT2B/llyZQfEgWeitNSvBKfzVKmZi6i8R8ds9GsP9Xcj0sA3zHMtcl/t0jdhFp8NLrLn9hPghooMblMExREkuSC6n5/ZGay4UJBbDU717ezWmRk21SP/zBXK3oOiPTVPmEMHsi6kpMt/9CuF7FOXeLeG6faA3NXzpgIIKTzhe868/ZdXi6B5uQdrui2q10LIDyMBzciUeSATeWXTAVXjdRgLGcxZwogSBtG032GOMebJgzOdN/Yl2/1Ncqa8M2j1AP/6Pp8DyIhIs1kQiWYp4lnpPQgjRbEUR5KoOYA3ZHozvN+DtoHF1x4lb5lrMs4lvYaEqXme33ktWZfm4=
 jobs:
   include:
-    - name: Job 1
-    - name: Job 2
-    - name: Job 3
+    - name: Kylo Ren
+    - name: Chewbacca
+    - name: Rey
+    - name: Luke Skywalker
+    - name: Obi-Wan Kenobi
 notifications:
   slack:
     rooms:
