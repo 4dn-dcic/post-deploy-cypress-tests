@@ -24,6 +24,7 @@ jobs:
     - name: Rey
     - name: Luke Skywalker
     - name: Obi-Wan Kenobi
+    - name: Darth Plagueis
 notifications:
   slack:
     rooms:
