@@ -20,7 +20,6 @@ env:
 jobs:
   include:
     - name: Kylo Ren
-    - name: Chewbacca
     - name: Rey
     - name: Luke Skywalker
     - name: Obi-Wan Kenobi
