@@ -1,6 +1,6 @@
 # Action that Runs Cypress Tests
 
-name: Cypress Tests - Staging
+name: Cypress Tests - Hotseat 
 
 # Controls when the action will run. 
 on:
@@ -15,7 +15,10 @@ jobs:
   cypress-run:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
-
+    stategy:
+      fast-fail: false  # suggested by Cypress
+      matrix:
+        containers: [1, 2, 3, 4, 5]
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -35,5 +38,9 @@ jobs:
           git clone https://github.com/4dn-dcic/fourfront.git ./fourfront
       
       - name: Cypress
+        env:
+          CYPRESS_KEY: ${{ secrets.CYPRESS_KEY }}
+          Auth0Client: ${{ secrets.Auth0Client }}
+          Auth0Secret: ${{ secrets.Auth0Secret }}
         run: |
-         $(npm bin)/cypress run --project ./fourfront/deploy/post_deploy_testing --browser chrome --config baseUrl=http://fourfront-hotseat.9wzadzju3p.us-east-1.elasticbeanstalk.com/  
+         $(npm bin)/cypress run --record --key $CYPRESS_KEY --env Auth0Client=$Auth0Client,Auth0Secret=$Auth0Secret --project ./fourfront/deploy/post_deploy_testing --browser chrome --config baseUrl=http://fourfront-hotseat.9wzadzju3p.us-east-1.elasticbeanstalk.com/ --parallel 
