@@ -36,4 +36,4 @@ jobs:
       
       - name: Cypress
         run: |
-          echo "add cypress when it looks like it works"
+         $(npm bin)/cypress run --project ./fourfront/deploy/post_deploy_testing --browser chrome --config baseUrl=http://fourfront-hotseat.9wzadzju3p.us-east-1.elasticbeanstalk.com/  
