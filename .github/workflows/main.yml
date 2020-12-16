@@ -15,7 +15,7 @@ jobs:
   cypress-run:
     # The type of runner that the job will run on
     runs-on: ubuntu-18.04
-    stategy:
+    strategy:
       fast-fail: false  # suggested by Cypress
       matrix:
         containers: [1, 2, 3, 4, 5]
