@@ -1,5 +1,9 @@
 # Cypress Post-Deployment Tests
 
+## Archived
+
+As of 2021-04-28, this repository is archived. We have migrated to using Github Actions and this documentation is now outdated. Cypress tests now run using Github Actions of the main fourfront repo itself.
+
 ## What this repository does
 
 _Post-Deploy_ Cypress tests from the [fourfront repository](https://github.com/4dn-dcic/fourfront/tree/master/deploy/post_deploy_testing) are imported and ran by code in this repository on the Travis Continuous Integration VM(s) (which pre-installs browser and other necessities). The file "./config.sh" contains per-branch configuration settings such that each different branch of _this repository_ will run against a different environment.
